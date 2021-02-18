@@ -1,0 +1,20 @@
+$font-stack: arial, helvetica, sans-serif;
+
+$font-color:#fff;
+$base-color: rgb(235, 206, 226);
+$base-white:rgb(255,255,255);
+
+
+@mixin aBtn {
+    display: inline-block;
+      padding: 10px 50px;
+      border: 2px solid #fff;
+      font-size: 100%;
+      text-decoration: none;
+      color: $font-color;
+      margin-top: 15px;
+      &:hover{
+        background: $font-color;
+        color:$base-color;
+      }
+}

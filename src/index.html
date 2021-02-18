@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="se">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>frontend proj wuIII</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+    <button id="btnScroll">
+        <i class="material-icons">arrow_upward</i>
+    </button>
+     <button data-modal-target="#modal" id="contact">Contact</button>
+     <div class="modal" id="modal">
+         <div class="modal-header">       
+             <button data-close-button class="close-button">&times;</button>
+         </div>
+         <div class="modal-body">
+             <p>Marie Lindström <br>zeldastardust@hotmail.com <br> 012-1234567</p>
+            </div>
+     </div>
+     <div id="overlay"></div>
+    <div class="banner-img"></div>
+    <div class="banner-text">
+        <h1>Marie Lindström</h1>
+        <p>Soone to be, Webbdeveloper </p>
+        <a href="#showWork" class="expA">Work</a>
+        <a href="#showStudy" class="expA">Study</a>
+        <a href="#" class="expA">Sites</a>
+        <a href="#" class="expA">About</a>
+    </div>
+
+    <div class="wrap">
+    <section id="showWork">
+        <h1>Work</h1>
+    <div id="work"> 
+    </div>
+</section>
+
+
+<section id="showStudy">
+    <h1>Study</h1>
+    <table class="table table-hover table">
+        <thead class="table-head">
+          <tr>                       
+            <th>Kurs/Program</th>
+            <th>Lärosäte</th>
+            <th>Period</th>
+          </tr>
+        </thead>
+        <tbody id="study">
+        </tbody> 
+      </table>
+</section>
+</div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
