@@ -9,6 +9,8 @@ html {
   padding: 0;
   font: $font-stack;
 }
+
+//button for contact modal
 #contact  {
     left: 85%;
     position: absolute;
@@ -20,6 +22,9 @@ html {
     border-color: $base-white;
     cursor: pointer;
   }
+
+
+  //button scroll to top
   #btnScroll{
     position: fixed;
     right: 4%;
@@ -48,6 +53,8 @@ html {
     height: 100%;
     
   }
+
+  //main content banner
   .banner-text {
     position: absolute;
     top: 50%;
@@ -71,7 +78,8 @@ html {
       @include aBtn();
     }
   }
-  
+   
+  //contactmodal settings
   .modal{
     position: fixed;
     top: 20%;
@@ -131,31 +139,170 @@ html {
     pointer-events: all;
   }
  
+  .wrap{
+   // display: grid;
+   // grid-template-columns: 50% 50%;
+  }
+  //work output
   #showWork
   {
     width: 60%;
     padding: 40px 0;
     text-align: center;
-    border-top-left-radius: 70px;
-    border-bottom-right-radius: 70px;
-    background-color: $base-color;
+    background-image: url(../images/work.jpg);
     color: $font-color;
     font-weight: bold;
-    border: 10px inset #fff;
     margin: auto;
-    margin-top: 10%
+    background-repeat: no-repeat;
+    background-position: center center;
+    
+    #work{
+      width: 50%;
+      margin-left: 10%;
+      padding: 1%;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter:blur(10px);
+      color: white;
+      
+      
+    }
+    
+    .workContent{
+      text-align: left;
+      margin-left: 10%;
+      li{
+        padding: 1%;
+      }
+      
+    }
+
   }
+
+  //study output
   #showStudy
   {
     @extend #showWork;
-    grid-area: 1/2/1/3;
-    
-  }
- 
-  .studyContent
+    background-image: url(../images/bok.jpg);
+    margin-top: 17%;
+  
+     #studyTable
   {
     margin-top: 5%;
-    
+    margin-left: 10%;
+    padding: 2%;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter:blur(10px);
+    color: white;
+    text-align: left;
+    width: 80%;
+
+    th{
+      text-transform: uppercase;
+      text-decoration: underline;
+      padding-left: 2%;
+    }
+    td{
+      padding-left: 2%;
+    }
   }
+  }
+
+  #showSite{
+    margin-top: 17%;
+    padding: 0;
+   // height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $base-color;
+
+    .slider{
+      width: 800px;
+      height: 500px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .slides{
+      width: 500%;
+      height: 500px;
+      display: flex;
+      input{
+        display: none;
+      }
+    }
+    
+    .slide{
+      width: 20%;
+      transition: 2s;
+      
+    }
+
+    .navigation-manual{
+      position: absolute;
+      width: 800px;
+      margin-top: -40px;
+      display: flex;
+      justify-content: center;
+
+      .manual-btn{
+        border:2px solid $base-color;
+        padding: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition:1s;
+      }
+    }
+    .manual-btn:not(:last-child){
+      margin-right: 40px;
+      
+    }
+    .manual-btn:hover{
+      background: $base-color;
+    }
+    #radio1:checked ~ .first{
+      margin-left: 0;
+    }
+    #radio2:checked ~ .first{
+      margin-left: -20%;
+    }
+    #radio3:checked ~ .first{
+      margin-left: -40%;
+    }
+    #radio4:checked ~ .first{
+      margin-left: -60%;
+    }
+    .navigation-auto{
+      position: absolute;
+     display: flex;
+     width: 800px;
+     justify-content: center;
+     margin-top: 460px;
+
+      div{
+        border:  2px solid $base-color;
+        padding: 5px;
+        border-radius: 10px;
+        transition: 1s;
+      }
+      div:not(:last-child){
+        margin-right: 40px;
+      }
+      #radio1:checked ~.navigation-auto .auto-btn1{
+        background: $base-color;
+      }
+      #radio2:checked ~.navigation-auto .auto-btn2{
+        background: $base-color;
+      }
+      #radio3:checked ~.navigation-auto .auto-btn3{
+        background: $base-color;
+      }
+      #radio4:checked ~.navigation-auto .auto-btn4{
+        background: $base-color;
+      }
+    }
+  }
+ 
+ 
+
   
 

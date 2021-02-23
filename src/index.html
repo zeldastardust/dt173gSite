@@ -9,45 +9,45 @@
       rel="stylesheet">
 </head>
 <body>
-    <button id="btnScroll">
+    <button id="btnScroll"><!--button to scroll to top-->
         <i class="material-icons">arrow_upward</i>
     </button>
-     <button data-modal-target="#modal" id="contact">Contact</button>
-     <div class="modal" id="modal">
+     <button data-modal-target="#modal" id="contact">Contact</button><!--button for contact modal-->
+     <div class="modal" id="modal"><!--contact-modal-->
          <div class="modal-header">       
              <button data-close-button class="close-button">&times;</button>
          </div>
          <div class="modal-body">
              <p>Marie Lindström <br>zeldastardust@hotmail.com <br> 012-1234567</p>
             </div>
-     </div>
+     </div><!--end of contact modal-->
      <div id="overlay"></div>
     <div class="banner-img"></div>
-    <div class="banner-text">
+    <div class="banner-text"><!--main banner-->
         <h1>Marie Lindström</h1>
         <p>Soone to be, Webbdeveloper </p>
         <a href="#showWork" class="expA">Work</a>
         <a href="#showStudy" class="expA">Study</a>
-        <a href="#" class="expA">Sites</a>
-        <a href="#" class="expA">About</a>
+        <a href="#showSite" class="expA">Sites</a>
+        
     </div>
 
     <div class="wrap">
-    <section id="showWork">
+    <section id="showWork"><!--section for work output-->
         <h1>Work</h1>
-    <div id="work"> 
-    </div>
+    <ul id="work"> 
+    </ul>
 </section>
 
 
-<section id="showStudy">
+<section id="showStudy"><!--section for study output-->
     <h1>Study</h1>
-    <table class="table table-hover table">
+    <table class="table table-hover table" id="studyTable">
         <thead class="table-head">
           <tr>                       
             <th>Kurs/Program</th>
             <th>Lärosäte</th>
-            <th>Period</th>
+           
           </tr>
         </thead>
         <tbody id="study">
@@ -55,6 +55,47 @@
       </table>
 </section>
 </div>
+
+<section id="showSite"><!--section for site output-->
+
+    <div class="slider"><!--image slider-->
+        <div class="slides">
+            <input type="radio" name="radio-btn" id="radio1"><!--radio buttons-->
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+            <div class="slide first"><!--slide images-->
+                <img src="./images/loppiosa.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="./images/skogsbolaget.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="./images/teaml.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="./images/tree.png" alt="">
+            </div>
+            <div class="navigation-auto"><!--automatic navigation-->
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div><!-- end of automatic navigation-->
+        </div>
+        <div class="navigation-manual"><!--manual navigation-->
+            <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                    <label for="radio3" class="manual-btn"></label>
+                    <label for="radio4" class="manual-btn"></label>
+        </div><!-- end of manual navigation-->
+    </div><!--end of image slider-->
+
+
+   <!-- <h1>Sites</h1>
+    <div id="sites"></div>-->
+
+</section>
 
     <script src="js/main.js"></script>
 </body>

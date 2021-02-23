@@ -1,18 +1,18 @@
 "use strict"
 
-//variables
+//variables for fetch data from api
 
 let workEl = document.getElementById("work");
 let studyEl = document.getElementById("study");
-//let sitesEl = document.getElementById("sites");
+let sitesEl = document.getElementById("sites");
 
 
-//eventlistener
+//eventlistener for fetch data from api
 window.addEventListener('load', getWork);
 window.addEventListener('load', getStudy);
-//window.addEventListener('load', getSites);
+window.addEventListener('load', getSites);
 
-//functions
+//functions for fetch data from api
 
 function fetchData() {
     showWork();
@@ -28,7 +28,7 @@ function getWork(){
             workEl.innerHTML +=
             `
             <div class="workContent">
-              <h3>${work.title} --${work.company}</h3>             
+              <li>${work.title} --${work.company}</li>             
             </div>
           `;           
         })
@@ -44,18 +44,42 @@ function getStudy(){
       data.records.forEach(study =>{
           studyEl.innerHTML +=
           `<tr>
+          <td>${study.coursename}</td>
             <td>${study.place}</td>
-            <td>${study.coursename}</td>
-            <td>${study.startedu} - ${study.stopedu}</td>
+            
+            
           </tr>`;
       })
   })
 }
 
+function getSites(){
+  sitesEl.innerHTML='';
+  fetch("http://localhost/dt173g/api/sites.php")
+  .then(response => response.json())
+  .then(data => {
+      data.records.forEach(sites =>{
+          sitesEl.innerHTML +=
+          `
+          <div class="sitesContent">
+            <h2>${sites.webname}</h2> <br>
+            <h3>${sites.url}</h3>
+            <p>${sites.description}</p>             
+          </div>
+        `;           
+      })
+  })
+}
+
+
+
+//modal variables
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
 
+
+//modal buttons
 openModalButtons.forEach(button =>{
   button.addEventListener('click', ()=>{
     const modal = document.querySelector(button.dataset.modalTarget)
@@ -76,6 +100,7 @@ closeModalButtons.forEach(button => {
   })
 })
 
+//modal functions
 function openModal(modal){
   if (modal== null) return
   modal.classList.add('active')
@@ -87,6 +112,7 @@ function closeModal(modal){
   overlay.classList.remove('active')
 }
 
+//button and function for scroll to top button
 const btnScroll = document.querySelector("#btnScroll");
 
 btnScroll.addEventListener("click", function(){
@@ -96,3 +122,14 @@ btnScroll.addEventListener("click", function(){
    behavior:"smooth"
  });
 });
+
+//image slider
+
+var counter = 1;
+setInterval(function(){
+  document.getElementById('radio' + counter).checked = true;
+  counter++;
+  if(counter > 4){
+    counter =1;
+  }
+},5000);
