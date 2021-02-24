@@ -45,9 +45,7 @@ function getStudy(){
           studyEl.innerHTML +=
           `<tr>
           <td>${study.coursename}</td>
-            <td>${study.place}</td>
-            
-            
+            <td>${study.place}</td>   
           </tr>`;
       })
   })
@@ -62,8 +60,8 @@ function getSites(){
           sitesEl.innerHTML +=
           `
           <div class="sitesContent">
-            <h2>${sites.webname}</h2> <br>
-            <h3>${sites.url}</h3>
+           <a href="${sites.url}" <h2>${sites.webname}</h2></a>
+            
             <p>${sites.description}</p>             
           </div>
         `;           

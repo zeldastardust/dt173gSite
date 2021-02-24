@@ -8,6 +8,10 @@ html {
   margin: 0;
   padding: 0;
   font: $font-stack;
+
+  img{
+    width: 100%;
+  }
 }
 
 //button for contact modal
@@ -35,7 +39,8 @@ html {
     background: $base-color;
     box-shadow: 0 0 10px rgba(235, 206, 226, 0.25);
     color: $base-white;
-    border: none;
+    border-style: solid;
+    border-color: white;
     outline: none;
     cursor: pointer;
   }
@@ -139,10 +144,6 @@ html {
     pointer-events: all;
   }
  
-  .wrap{
-   // display: grid;
-   // grid-template-columns: 50% 50%;
-  }
   //work output
   #showWork
   {
@@ -150,6 +151,7 @@ html {
     padding: 40px 0;
     text-align: center;
     background-image: url(../images/work.jpg);
+   
     color: $font-color;
     font-weight: bold;
     margin: auto;
@@ -157,8 +159,8 @@ html {
     background-position: center center;
     
     #work{
-      width: 50%;
-      margin-left: 10%;
+      max-width: 50%;
+      margin-left: 20%;
       padding: 1%;
       background: rgba(0,0,0,0.3);
       backdrop-filter:blur(10px);
@@ -183,18 +185,18 @@ html {
   {
     @extend #showWork;
     background-image: url(../images/bok.jpg);
-    margin-top: 17%;
+    margin-top: 10%;
   
      #studyTable
   {
     margin-top: 5%;
-    margin-left: 10%;
+    margin-left: 20%;
     padding: 2%;
     background: rgba(0,0,0,0.3);
     backdrop-filter:blur(10px);
     color: white;
     text-align: left;
-    width: 80%;
+    max-width: 50%;
 
     th{
       text-transform: uppercase;
@@ -206,15 +208,38 @@ html {
     }
   }
   }
+ #showSite{
+  @extend #showWork;
+  background-image: url(../images/sites.jpg);
+  margin-top: 10%;
+  a{
+    
+    color: $base-white;
+    font-size: 150%;
+  }
+  #sites{
+    margin-top: 1%;
+    margin-left: 20%;
+    padding: 2%;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter:blur(10px);
+    color: white;
+    text-align: left;
+    max-width: 50%;
 
-  #showSite{
-    margin-top: 17%;
+    .sitesContent{
+      margin-top: 3%;
+    }
+  }
+ }
+  #SiteSlider{
+    
     padding: 0;
    // height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $base-color;
+   
 
     .slider{
       width: 800px;
@@ -301,6 +326,24 @@ html {
       }
     }
   }
+  footer{
+    background-color: $base-color;
+    text-align: center;
+    margin-top: 3%;
+    color: $base-white;
+    padding: 3%;
+  }
+  @media screen and (max-width800px){
+    #overlay{
+      display: none;
+    }
+    #btnScroll{
+      display: none;
+    }
+
+
+ 
+}
  
  
 
