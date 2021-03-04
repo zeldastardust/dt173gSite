@@ -13,18 +13,12 @@ window.addEventListener('load', getStudy);
 window.addEventListener('load', getSites);
 
 //functions for fetch data from api
-
-function fetchData() {
-    showWork();
-    //showEducation();
-   // showProjects();
-  }
 function getWork(){
     workEl.innerHTML='';
     fetch("http://localhost/dt173g/api/work.php")
     .then(response => response.json())
     .then(data => {
-        data.records.forEach(work =>{
+        data.worklist.forEach(work =>{
             workEl.innerHTML +=
             `
             <div class="workContent">
@@ -37,11 +31,10 @@ function getWork(){
 
 function getStudy(){
   studyEl.innerHTML='';
-
   fetch("http://localhost/dt173g/api/study.php")
   .then(response => response.json())
   .then(data => {
-      data.records.forEach(study =>{
+      data.studylist.forEach(study =>{
           studyEl.innerHTML +=
           `<tr>
           <td>${study.coursename}</td>
@@ -56,7 +49,7 @@ function getSites(){
   fetch("http://localhost/dt173g/api/sites.php")
   .then(response => response.json())
   .then(data => {
-      data.records.forEach(sites =>{
+      data.sitelist.forEach(sites =>{
           sitesEl.innerHTML +=
           `
           <div class="sitesContent">
@@ -121,8 +114,7 @@ btnScroll.addEventListener("click", function(){
  });
 });
 
-//image slider
-
+// function for image slider
 var counter = 1;
 setInterval(function(){
   document.getElementById('radio' + counter).checked = true;

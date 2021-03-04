@@ -1,17 +1,14 @@
 @import "base";
-* {
-  box-sizing: border-box;
-}
+
 body,
 html {
   height: 100%;
   margin: 0;
   padding: 0;
+  line-height: 1.6;
   font: $font-stack;
-
-  img{
-    width: 100%;
-  }
+ 
+  
 }
 
 //button for contact modal
@@ -27,24 +24,6 @@ html {
     cursor: pointer;
   }
 
-
-  //button scroll to top
-  #btnScroll{
-    position: fixed;
-    right: 4%;
-    bottom: 2%;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: $base-color;
-    box-shadow: 0 0 10px rgba(235, 206, 226, 0.25);
-    color: $base-white;
-    border-style: solid;
-    border-color: white;
-    outline: none;
-    cursor: pointer;
-  }
-  
   h1 {
     font-size: 300%;
     text-transform: uppercase;
@@ -72,7 +51,7 @@ html {
     border-top-left-radius: 70px;
     border-bottom-right-radius: 70px;
     background-color: $base-color;
-    color: $font-color;
+    color: set-text-color($base-color);
     font-weight: bold;
     border: 10px inset #fff;
 
@@ -147,11 +126,10 @@ html {
   //work output
   #showWork
   {
-    width: 60%;
     padding: 40px 0;
     text-align: center;
     background-image: url(../images/work.jpg);
-   
+    width: 70%;
     color: $font-color;
     font-weight: bold;
     margin: auto;
@@ -159,13 +137,12 @@ html {
     background-position: center center;
     
     #work{
-      max-width: 50%;
-      margin-left: 20%;
-      padding: 1%;
       background: rgba(0,0,0,0.3);
       backdrop-filter:blur(10px);
       color: white;
-      
+      height: 100%;
+      width: 70%;
+      margin: auto;
       
     }
     
@@ -173,7 +150,8 @@ html {
       text-align: left;
       margin-left: 10%;
       li{
-        padding: 1%;
+        padding: 2%;
+        list-style: none;
       }
       
     }
@@ -189,14 +167,15 @@ html {
   
      #studyTable
   {
-    margin-top: 5%;
-    margin-left: 20%;
+    margin: auto;
+    margin-bottom: 2%;
     padding: 2%;
     background: rgba(0,0,0,0.3);
     backdrop-filter:blur(10px);
     color: white;
     text-align: left;
-    max-width: 50%;
+    width: 70%;
+    height: 100%;
 
     th{
       text-transform: uppercase;
@@ -211,6 +190,7 @@ html {
  #showSite{
   @extend #showWork;
   background-image: url(../images/sites.jpg);
+  
   margin-top: 10%;
   a{
     
@@ -219,13 +199,14 @@ html {
   }
   #sites{
     margin-top: 1%;
-    margin-left: 20%;
-    padding: 2%;
+    //margin-left: 20%;
+    margin: auto;
+    //padding: 2%;
     background: rgba(0,0,0,0.3);
     backdrop-filter:blur(10px);
     color: white;
     text-align: left;
-    max-width: 50%;
+    max-width: 70%;
 
     .sitesContent{
       margin-top: 3%;
@@ -242,14 +223,16 @@ html {
    
 
     .slider{
-      width: 800px;
-      height: 500px;
+      width: 37.5rem;
+      //height: 37.5rem;
       border-radius: 10px;
       overflow: hidden;
     }
     .slides{
+      margin-top: 10%;
+      margin-bottom: 10%;
       width: 500%;
-      height: 500px;
+     // height: 525px;
       display: flex;
       input{
         display: none;
@@ -259,12 +242,14 @@ html {
     .slide{
       width: 20%;
       transition: 2s;
-      
+      img{
+        width: unset;
+      }
     }
 
     .navigation-manual{
       position: absolute;
-      width: 800px;
+      width: 600px;
       margin-top: -40px;
       display: flex;
       justify-content: center;
@@ -299,9 +284,11 @@ html {
     .navigation-auto{
       position: absolute;
      display: flex;
-     width: 800px;
+     width: 600px;
      justify-content: center;
-     margin-top: 460px;
+     margin-top: -40px;
+     display: none;
+     
 
       div{
         border:  2px solid $base-color;
@@ -333,17 +320,7 @@ html {
     color: $base-white;
     padding: 3%;
   }
-  @media screen and (max-width800px){
-    #overlay{
-      display: none;
-    }
-    #btnScroll{
-      display: none;
-    }
-
-
  
-}
  
  
 

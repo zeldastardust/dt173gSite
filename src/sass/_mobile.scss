@@ -1,0 +1,65 @@
+@media(max-width: 700px){
+    h1{
+        font-size: 200%;
+    }
+    .modal{
+        left: 40%;
+        width: 70%;
+    }
+    #contact{
+        left: 40%;
+    }
+    #btnScroll{
+        display: none;
+    } 
+    #showWork{
+        background-image: none;
+        background-color: $base-color;
+        border: 10px inset ;
+        #work
+        {
+            background: none;
+            backdrop-filter:none;
+        }
+        
+    }
+    #showStudy{
+
+     #studyTable{
+        background: none;
+        backdrop-filter:none; 
+        width: 100%;
+     }
+    }
+    #showSite{
+       
+        p{
+            font-size: 100%;
+        }
+     a{
+        font-size: 120%;
+        color:gray;
+    }
+
+    #sites
+     {
+        background: none;
+        backdrop-filter:none;
+       
+    }
+    }
+    
+    
+    
+    #SiteSlider {
+        .slide img{
+        width: 100%;
+        }
+    
+    .navigation-manual{
+        display: none;
+    }
+    
+    }
+   
+}

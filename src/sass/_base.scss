@@ -1,10 +1,49 @@
+//font and color settings
 $font-stack: arial, helvetica, sans-serif;
 
 $font-color:#fff;
 $base-color: rgb(235, 206, 226);
+$base-colorLight:lighten($base-color, 10%);
 $base-white:rgb(255,255,255);
 
+//set text color based on the background
+@function set-text-color($color){
+  @if(lightness($color)>80){
+    @return $font-color;
+  }@else{
+    @return #333;
+  }
+}
+//img settings
+img{
+  width: 100%;
+}
+//margin and padding classes
+//variable        list
+$spaceamounts:(1,2,3,4,5);
+//loop threw list
+@each $space in $spaceamounts {
+  .m-#{$space}{
+    margin: #{$space}rem;//marginal around 
+  }
+  .my-#{$space}{
+    margin: #{$space}rem 0;//margin top and bottom
+  }
+  .mx-#{$space}{
+    margin:0 #{$space}rem;//margin left right
+  }
+  .p-#{$space}{
+    padding: #{$space}rem;//padding around
+  }
+  .py-#{$space}{
+    padding: #{$space}rem 0;//padding top and bottom
+  }
+  .px-#{$space}{
+    padding:0 #{$space}rem;//padding left and right
+  }
+}
 
+//settings for link buttons
 @mixin aBtn {
     display: inline-block;
       padding: 10px 50px;
