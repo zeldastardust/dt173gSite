@@ -1,4 +1,4 @@
-const {src, dest, watch, series, parallel} = require("gulp");
+const {src, dest, watch, series, parallel} = require("gulp");//include gulp
 const concat = require("gulp-concat");
 const terser = require("gulp-terser");
 const sourcemaps= require("gulp-sourcemaps");
@@ -29,7 +29,7 @@ function copyHTML(){
 function jsTask(){
     return src(files.jsPath)
     .pipe(sourcemaps.init())
-       .pipe(concat('main.js'))
+       .pipe(concat('main.js'))//file for concatenation
        .pipe(terser())
        .pipe(sourcemaps.write('.'))
        .pipe(browserSync.stream())
